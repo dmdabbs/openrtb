@@ -76,20 +76,20 @@ Must include at least one buyer (`igb`, in the bid response from the buyer to th
     <td><strong>Description</strong></td>
   </tr>
   <tr>
-    <td><code>origin </code></td>
+    <td><code>origin</code></td>
     <td>string; required</td>
     <td>Origin of the Interest Group buyer to participate in the IG auction. See https://developer.mozilla.org/en-US/docs/Glossary/Origin.</td>
   </tr>
   <tr>
     <td><code>maxbid</code></td>
     <td>double</td>
-    <td>Maximum Interest Group bid price expressed in CPM currency that a bidder agrees to pay if they win an in-browser Interest Group auction expressed expressed in the currency denoted by the <code>cur</code> attribute. Actual winning bid in the in-browser auction that determines the amount a bidder pays for the impression may be lower than this amount. This constraint reduces the risks from in-browser auction bids submitted in error or reported due to fraud and abuse.</td>
+    <td>Maximum Interest Group bid price expressed in CPM currency that a bidder agrees to pay if they win an in-browser Interest Group auction expressed in the currency denoted by the <code>cur</code> attribute. Actual winning bid in the in-browser auction that determines the amount a bidder pays for the impression may be lower than this amount. This constraint reduces the risks from in-browser auction bids submitted in error or reported due to fraud and abuse.</td>
  </tr>
   <tr>
     <td><code>cur</code></td>
     <td>string;<br>default "USD"</td>
     <td>
-    The buyer's currency signals, an object mapping string keys to Javascript numbers. If specified, the seller will add to its auction config <code>perBuyerCurrencies</code> attribute map, keyed by the Interest Group buyer origin. Indicates the currency in which Interest Group bids will be placed. The <code>maxbid</code> should always match the <code>cur</code> value.
+    If specified, the seller will add to its auction config <code>perBuyerCurrencies</code> attribute map, keyed by the Interest Group buyer origin. Indicates the currency in which Interest Group bids will be placed. The <code>maxbid</code> should always match the <code>cur</code> value.
     <br><br>
     Value must be a three digit ISO 4217 alpha currency code (e.g. "USD").
     </td>
@@ -232,7 +232,7 @@ Following extends the Ad Served On Win Notice example to demonstrate a bidder pl
       "impid": "1",
       "igb":[{   	 
         "origin": "https://paapi.dsp.com",
-        "pbs": "{\"key\": \"value\"}"
+        "pbs": {"key": "value"}
       }]
     }]
   }
@@ -252,7 +252,7 @@ Following is an example where a bidder places no bid in the standard OpenRTB auc
         "impid": "1",
         "igb":[{   	 
           "origin": "https://paapi.dsp.com",
-          "pbs": "{\"key\": \"value\"}"
+          "pbs": {"key": "value"}
         }]
     }]
   }
